@@ -1,7 +1,6 @@
-PySpark is the Python API for Apache Spark, enabling the use of Python to harness the power of distributed data processing. It’s widely used for big data analytics and ETL tasks. Key points include:
+*PySpark is the Python API for Apache Spark, enabling the use of Python to harness the power of distributed data processing. It’s widely used for big data analytics and ETL tasks. Key points include:*
 
-Core Concepts:
-
+# Core Concepts:
 RDD (Resilient Distributed Dataset): Immutable distributed collection of objects.
 DataFrame: A distributed collection of data organized into named columns (optimized for SQL-like operations).
 Dataset: Type-safe, object-oriented data structure (not available in PySpark, but in Scala/Java).
@@ -10,27 +9,26 @@ Features:
 Distributed computation with fault tolerance.
 Compatible with SQL and supports structured data processing.
 Integration with various storage systems (e.g., HDFS, GCS, S3).
-Key Components:
 
+# Key Components:
 SparkContext: Entry point for Spark functionality.
 SparkSession: Unified entry point for DataFrame and Dataset APIs.
 Transformations and Actions:
 Transformations: Create a new dataset (e.g., map, filter).
 Actions: Trigger computations (e.g., collect, count).
-Libraries:
 
+# Libraries:
 Spark SQL: For SQL and DataFrame operations.
 MLlib: Machine learning.
 GraphX: Graph processing.
 Spark Streaming: Real-time stream processing.
-Integration with GCP:
 
+# Integration with GCP:
 Use GCS (Google Cloud Storage) as input/output storage.
 BigQuery connector for reading/writing directly to/from BigQuery.
 Run on Dataproc, Google Cloud’s managed Spark/Hadoop service.
 PySpark Code for GCP Example: Read from GCS and Write to BigQuery
-python
-Copy code
+
 from pyspark.sql import SparkSession
 
 # Initialize SparkSession
@@ -60,21 +58,20 @@ print("Data successfully written to BigQuery!")
 
 # Stop the Spark session
 spark.stop()
+
 Steps to Run PySpark Code on GCP (Dataproc):
 Setup:
-
-Create a Google Cloud Storage bucket for staging files.
+# Create a Google Cloud Storage bucket for staging files.
 Create a Dataproc cluster.
 Ensure Spark and BigQuery connectors are installed.
-Submit Job:
 
+Submit Job:
 Upload your PySpark script to GCS.
+
 Submit the job via the GCP console or gcloud CLI:
-bash
-Copy code
 gcloud dataproc jobs submit pyspark gs://your-bucket-name/your-script.py \
     --cluster=your-cluster-name \
     --region=your-region
-Monitor:
 
+Monitor:
 Use the GCP Console or CLI to monitor the job status.
